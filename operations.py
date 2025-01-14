@@ -18,6 +18,8 @@ def from_rna(seq):
             out += 'T'
         else:
             out += nt
+    
+    return out
 
 def complement(seq):
     mapping = {'A' : 'T', 'T' : 'A', 'G' : 'C', 'C' : 'G'}
