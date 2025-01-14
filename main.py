@@ -3,7 +3,7 @@ def save(seq):
     file.write(seq)
     file.close()
 
-from operations import inverse
+from operations import inverse, to_rna, from_rna
 
 def main():
     seq = input("Specify your DNA sequence: ")
@@ -14,6 +14,8 @@ def main():
         print("Your DNA is:", seq)
         print("1. Save to file")
         print("2. Calculate the inverse")
+        print("4. Change to RNA")
+        print("5. Change from RNA")
         print("Q. Exit")
 
         choice = input()
@@ -22,6 +24,10 @@ def main():
             save(seq)
         elif choice == '2':
             seq = inverse(seq)
+        elif choice == '4':
+            seq = to_rna(seq)
+        elif choice == '5':
+            seq = from_rna(seq)
         if choice == 'q':
             exit()
 
